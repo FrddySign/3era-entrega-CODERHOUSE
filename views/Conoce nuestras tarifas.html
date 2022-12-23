@@ -11,7 +11,15 @@
     <script src="https://kit.fontawesome.com/e7fc1e4d90.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/jpg" href="../img/favicon.ico"/>
 </head>
-<body>
+<body class="hidden">
+  <div class="centrado" id="onload">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
     
     <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(rgb(11, 87, 113), rgb(242, 234, 233))">
         <div class="container-fluid">
@@ -34,14 +42,14 @@
                     </ul>
                   </li>
               <li class="nav-item">
-                <a class="nav-link active " aria-current="page" href="./ABOUT US.html" style="color: white; font-weight: bold; font-family: "Oswald>ABOUT US</a>
+                <a class="nav-link active " aria-current="page" href="./ABOUT US.html" style="color  : white; font-weight: bold; font-family: "Oswald>ABOUT US</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./views/CUENTA.html" style="color: white; font-weight: bold; font-family: "Oswald" >CUENTA</a>
+                <a class="nav-link" href="./CUENTA.html" style="color: white; font-weight: bold; font-family: "Oswald" >CUENTA</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" href="#" style="color: white; font-weight: bold; font-family: "Oswald>CONTACTO</a>
+                <a class="nav-link active" href="./CONTACTO.html" style="color: white; font-weight: bold; font-family: "Oswald>CONTACTO</a>
               </li>
             </ul>
                 <form class="d-flex" role="search">
@@ -51,19 +59,263 @@
           </div>
         </div>
       </nav>
-
-      <div class="container">
-        <div class="pais-de-destino">
-          <h5>
-            Desde.
-          </h5>
-          
-        </div>
-        <div class="seguro"></div>
-        <div class="n°-pqt\,-peso\,-unidad\,-fecha"></div>
-        <div class="valor"></div>
-      </div>
-
+      
+      <div class="root">
+        <form action="" class="form-register">
+            <div class="form-register__header">
+                <ul class="progressbar">
+                    <li class="progressbar__option active">paso 1</li>
+                    <li class="progressbar__option">paso 2</li>
+                    <li class="progressbar__option">paso 3</li>
+                </ul>
+                <h1 class="form-register__title">Calcula tu tarifa de envio</h1>
+            </div>
+            <div class="form-register__body">
+                <div class="step active" id="step-1">
+                    <div class="step__header">
+                        <h2 class="step__title">Datos de la persona que envia<small>(Paso 1)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Nombre" class="step__input" required>
+                        <input type="text" placeholder="Apellido" class="step__input" required>
+                        <input type="email" placeholder="Correo electronico" class="step__input" required>
+                        <label for="exampleInputEmail1" class="form-label">Selecciona un pais</label>
+          <select class="form-seleccion" aria-label="Default select example" required>
+            <option selected>Selecione</option>
+            <option value="1" disabled>A</option>
+            <option value="2">Alemania</option>
+            <option value="3">Antigua y Barbuda</option>
+            <option value="4">Angola
+            <option value="5">Argentina
+            <option value="6">Australia
+            <option value="8" disabled>B
+            <option value="9">Bahamas
+            <option value="10">Belgica
+            <option value="11">Bolivia
+            <option value="12">Brasil
+            <option value="13">Bulgaria                    
+            <option value="14" disabled>C                    
+            <option value="15">Canada
+            <option value="16">Catar
+            <option value="17">Chile
+            <option value="18">Colombia
+            <option value="19">Corea del Norte
+            <option value="20">Costa Rica
+            <option value="21">Croacia
+            <option value="22">Cuba                    
+            <option value="23" disabled>D                    
+            <option value="24">Dinamarca                    
+            <option value="25" disabled>E                    
+            <option value="26">Ecuador
+            <option value="27">Egipto
+            <option value="28">El Salvador
+            <option value="29">España
+            <option value="30">Estados Unidos
+            <option value="31" disabled>F                    
+            <option value="32">Finlandia
+            <option value="33">Francia                    
+            <option value="34"disabled>G                    
+            <option value="35">Grecia
+            <option value="36">Guatemala
+            <option value="37">Guyana                    
+            <option value="38"disabled>H                    
+            <option value="39">Haiti
+            <option value="40">Honduras
+            <option value="41">Hong Kong
+            <option value="42">Holanda
+            <option value="43">Hungria                    
+            <option value="44"disabled>I                    
+            <option value="45">India
+            <option value="46">Indonesia
+            <option value="47">Islandia
+            <option value="48">Israel
+            <option value="49">Italia                    
+            <option value="50"disabled>J                    
+            <option value="51">Jamaica
+            <option value="52">Japon
+            <option value="53">Jordania                    
+            <option value="54"disabled>K                    
+            <option value="55">Kuwait                    
+            <option value="56"disabled>M                    
+            <option value="57">Mexico
+            <option value="58">Maldivas
+            <option value="59">Marruecos
+            <option value="60">Monaco                    
+            <option value="61"disabled>N                    
+            <option value="62">Nicaragua                    
+            <option value="63"disabled>Ñ                    
+            <option value="64">No disponible                    
+            <option value="65"disabled>O                    
+            <option value="66">No disponible                                        
+            <option value="67"disabled>P                    
+            <option value="68">Peru
+            <option value="69">Portugal
+            <option value="70">Puerto Rico
+            <option value="71">Paraguay
+            <option value="72"disabled>R                    
+            <option value="73">Reino Unido
+            <option value="74">Republica Dominicana
+            <option value="75">Rusia                    
+            <option value="76"disabled>S                    
+            <option value="77">Suiza
+            <option value="78">Suecia                    
+            <option value="79"disabled>T                    
+            <option value="80">Taiwan
+            <option value="81">Tunez
+            <option value="82">Trinidad y Tobago                    
+            <option value="83"disabled>U                    
+            <option value="84">Ucania
+            <option value="85">Uruguay                    
+            <option value="86"disabled>V                 
+            <option value="87">Venezuela
+            <option value="88">Vaticano                    
+            <option value="89"disabled>W           
+            <option value="90">No disponible                    
+            <option value="91"disabled>X              
+            <option value="92">No disponible
+            <option value="94"disabled>Y
+            <option value="94">No disponible
+            <option value="95"disabled>Z
+            <option value="96">No disponible
+            </select>
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--next" data-to_step="2" data-step="1">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step__header">
+                        <h2 class="step__title">Datos de la persona que recibe<small>(Paso 2)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Nombre" class="step__input" required>
+                        <input type="text" placeholder="Apellido" class="step__input" required>
+                        <input type="number" placeholder="Teléfono" class="step__input" required>
+                        <label for="exampleInputEmail1" class="form-label">Selecciona un pais</label>
+          <select class="form-seleccion" aria-label="Default select example" required>
+            <option selected>Selecione</option>
+            <option value="1" disabled>A</option>
+            <option value="2">Alemania</option>
+            <option value="3">Antigua y Barbuda</option>
+            <option value="4">Angola
+            <option value="5">Argentina
+            <option value="6">Australia
+            <option value="8" disabled>B
+            <option value="9">Bahamas
+            <option value="10">Belgica
+            <option value="11">Bolivia
+            <option value="12">Brasil
+            <option value="13">Bulgaria                    
+            <option value="14" disabled>C                    
+            <option value="15">Canada
+            <option value="16">Catar
+            <option value="17">Chile
+            <option value="18">Colombia
+            <option value="19">Corea del Norte
+            <option value="20">Costa Rica
+            <option value="21">Croacia
+            <option value="22">Cuba                    
+            <option value="23" disabled>D                    
+            <option value="24">Dinamarca                    
+            <option value="25" disabled>E                    
+            <option value="26">Ecuador
+            <option value="27">Egipto
+            <option value="28">El Salvador
+            <option value="29">España
+            <option value="30">Estados Unidos
+            <option value="31" disabled>F                    
+            <option value="32">Finlandia
+            <option value="33">Francia                    
+            <option value="34"disabled>G                    
+            <option value="35">Grecia
+            <option value="36">Guatemala
+            <option value="37">Guyana                    
+            <option value="38"disabled>H                    
+            <option value="39">Haiti
+            <option value="40">Honduras
+            <option value="41">Hong Kong
+            <option value="42">Holanda
+            <option value="43">Hungria                    
+            <option value="44"disabled>I                    
+            <option value="45">India
+            <option value="46">Indonesia
+            <option value="47">Islandia
+            <option value="48">Israel
+            <option value="49">Italia                    
+            <option value="50"disabled>J                    
+            <option value="51">Jamaica
+            <option value="52">Japon
+            <option value="53">Jordania                    
+            <option value="54"disabled>K                    
+            <option value="55">Kuwait                    
+            <option value="56"disabled>M                    
+            <option value="57">Mexico
+            <option value="58">Maldivas
+            <option value="59">Marruecos
+            <option value="60">Monaco                    
+            <option value="61"disabled>N                    
+            <option value="62">Nicaragua                    
+            <option value="63"disabled>Ñ                    
+            <option value="64">No disponible                    
+            <option value="65"disabled>O                    
+            <option value="66">No disponible                                        
+            <option value="67"disabled>P                    
+            <option value="68">Peru
+            <option value="69">Portugal
+            <option value="70">Puerto Rico
+            <option value="71">Paraguay
+            <option value="72"disabled>R                    
+            <option value="73">Reino Unido
+            <option value="74">Republica Dominicana
+            <option value="75">Rusia                    
+            <option value="76"disabled>S                    
+            <option value="77">Suiza
+            <option value="78">Suecia                    
+            <option value="79"disabled>T                    
+            <option value="80">Taiwan
+            <option value="81">Tunez
+            <option value="82">Trinidad y Tobago                    
+            <option value="83"disabled>U                    
+            <option value="84">Ucania
+            <option value="85">Uruguay                    
+            <option value="86"disabled>V                 
+            <option value="87">Venezuela
+            <option value="88">Vaticano                    
+            <option value="89"disabled>W           
+            <option value="90">No disponible                    
+            <option value="91"disabled>X              
+            <option value="92">No disponible
+            <option value="94"disabled>Y
+            <option value="94">No disponible
+            <option value="95"disabled>Z
+            <option value="96">No disponible
+            </select>
+                        <textarea rows="4" cols="80" placeholder="Direccion exacta" class="step__input"></textarea>
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="1" data-step="2">Regresar</button>
+                        <button type="button" class="step__button step__button--next" data-to_step="3" data-step="2">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step__header">
+                        <h2 class="step__title">Direccion<small>(Paso 3)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Dato x" class="step__input">
+                        <input type="text" placeholder="Dato x" class="step__input">
+                        <input type="text" placeholder="Dato x" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="2" data-step="3">Regresar</button>
+                        <button type="submit" class="step__button">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+      
       <div class="container_ico">
         <input type="checkbox" id="btn-mas">
         <div class="redes">
@@ -120,5 +372,9 @@
             </p>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

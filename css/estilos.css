@@ -294,12 +294,14 @@
     cursor: pointer;
     text-transform: uppercase;
 }
+.maps{
+    transform: translate(700px,-300);
+}
 #btn-mas{
     display: none;
 }
-
 .container_ico{
-    position: relative;
+    position: absolute;
     bottom: 20px;
     margin-left: 20px;
     width: 100%;
@@ -371,9 +373,7 @@
     text-align: center;
     width: 600px;
     margin-right: 20px;
-    background-image: url(../img/rastreo.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    
 }
 .instrucciones { 
     grid-area: instrucciones;
@@ -487,46 +487,10 @@ h2:hover{
     color: #ff851b;
 }
 
-.tarifa {   display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 0.1fr 3.6fr 0.1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr; 
-    gap: 5px 119px; 
-    grid-template-areas: 
-      ". pais-de-destino ."
-      ". seguro ."
-      ". n°-pqt\,-peso\,-unidad\,-fecha ."
-      ". valor .";
-  }
-  
-  .pais-de-destino { grid-area: pais-de-destino;
-    border: #000000 solid;
-    text-align: center;
-    height: 300px; 
-}
-  
-  .seguro { grid-area: seguro;
-    border: #000000 solid;  
-    text-align: center; 
-    height: 300px; 
-}
-  
-  .n°-pqt\,-peso\,-unidad\,-fecha { grid-area: n°-pqt\,-peso\,-unidad\,-fecha;
-    border: #000000 solid; 
-    text-align: center; 
-}
-  
-  .valor { grid-area: valor;
-    border: #000000 solid;
-    text-align: center;   
-}
-  
 .linea{
     margin-left: 180px;
     margin-right: 180px;
 }
-
-
 
 .comunicacion{
     margin-top: 30px;
@@ -638,6 +602,26 @@ h2:hover{
 .title{
     text-align: center ;
 }
+
+fieldset.form-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.form-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+#exampleFormControlTextarea1{
+    width: 360px;
+}
+
+
 
 footer{
     padding: 1px;
@@ -1360,6 +1344,232 @@ h2:hover{
 .title{
     text-align: center ;
 }
+
+------------------------------
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-1: #ffffff;
+    --color-bg-2: #ffffff;
+    --color-btn: #2196F3;
+    --color-header-step: orange;
+    --color-shadow: #222;
+    --color-border-input: #ddd;
+}
+/* Contenedor principal */
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-image: linear-gradient(var(--color-bg-1), var(--color-bg-2));
+    overflow: hidden;
+}
+
+/* Formulario */
+.form-register {
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Header del formulario */
+
+/* Progressbar */
+.progressbar {
+    display: flex;
+    list-style: none;
+    margin-bottom: 15px;
+    counter-reset: step;
+}
+
+.progressbar__option {
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.progressbar__option:before {
+    display: flex;
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    margin: 0 auto 5px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.progressbar__option:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: rgb(12, 12, 12);
+    position: absolute;
+    top: 10px;
+    left: -50%;
+    z-index: 1;
+}
+
+.progressbar__option:first-child:after {
+    content: none;
+}
+
+.progressbar__option.active:before, .progressbar__option.active:after {
+    background-color: var(--color-header-step);
+}
+
+/* Título del formulario */
+.form-register__title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* body del formulario */
+.form-register__body {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* step */
+.step {
+    background-color: white;
+    box-shadow: 5px 5px 5px 2px var(--color-shadow);
+    border-radius: 3px;
+    min-width: 100%;
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step.to-left {
+    margin-left: -100%;
+}
+
+.step.inactive {
+    animation-name: scale;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* header de step */
+.step__header {
+    padding: 20px 15px;
+    background-color: var(--color-header-step);
+    border-radius: 3px 3px 0 0;
+}
+
+.step__title {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* body de step */
+.step__body {
+    padding: 20px 15px 0;
+}
+
+/* step inputs */
+.step__input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-input);
+}
+
+/* step footer */
+.step__footer {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+/* step botones */
+.step__button {
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--color-btn);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.hidden{
+    overflow: hidden;
+}
+.centrado{
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 
 footer{
     padding: 1px;
